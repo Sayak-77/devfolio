@@ -206,10 +206,16 @@ const ContactPage = () => {
                 data-aos-delay="400"
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#6366f1]/20 active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="relative w-full h-12 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl font-semibold text-white overflow-hidden group transition-all duration-300 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                <Send className="w-5 h-5" />
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {/* White overlay on hover */}
+                <div className="absolute inset-0 bg-white/20 translate-y-12 group-hover:translate-y-0 transition-transform duration-300" />
+
+                {/* Button content */}
+                <div className="relative flex items-center justify-center gap-2 z-10">
+                  <Send className="w-5 h-5" />
+                  <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                </div>
               </button>
             </form>
 

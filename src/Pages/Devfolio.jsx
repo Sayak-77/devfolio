@@ -102,7 +102,7 @@ function a11yProps(index) {
 
 const techStacks = [
   { icon: "java.svg", language: "Java" },
-  { icon: "spring.svg", language: "Spring MVS" },
+  { icon: "cpp.svg", language: "C++ 17" },
   { icon: "python.svg", language: "Python" },
   { icon: "html.svg", language: "HTML" },
   { icon: "css.svg", language: "CSS" },
@@ -110,15 +110,15 @@ const techStacks = [
   { icon: "nextjs.svg", language: "NextJS" },
   { icon: "vite.svg", language: "Vite" },
   { icon: "nodejs.svg", language: "Node JS" },
-  { icon: "mongodb.svg", language: "MongoDB" },
+  { icon: "spring.svg", language: "Spring MVS" },
+  { icon: "wordpress.svg", language: "WordPress" },
   { icon: "sqlite.svg", language: "SQLite" },
+  { icon: "mongodb.svg", language: "MongoDB" },
   { icon: "firebase.svg", language: "Firebase" },
-  { icon: "MUI.svg", language: "Material UI" },
-  { icon: "git.svg", language: "Git" },
   { icon: "postgresql.svg", language: "PostgreSQL" },
   { icon: "docker.svg", language: "Docker" },
+  { icon: "git.svg", language: "Git" },
   { icon: "vercel.svg", language: "Vercel" },
-  { icon: "wordpress.svg", language: "WordPress" },
 ];
 
 export default function FullWidthTabs() {
@@ -213,7 +213,7 @@ export default function FullWidthTabs() {
           elevation={0}
           sx={{
             bgcolor: "transparent",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
+            border: "1px solid rgba(255, 0, 0, 0.1)",
             borderRadius: "20px",
             position: "relative",
             overflow: "hidden",
