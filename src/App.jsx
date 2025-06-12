@@ -77,11 +77,10 @@ function App() {
         <Route path="/project/:id" element={<ProjectPageLayout />} />
         <Route path="*" element={<NotFound/>} /> 
         <Route path="/thank-you" element={<ThankYouPage />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
       {/* <div>
         <Test/>
-        <ThankYouPage/>
-        <NotFound/>
       </div> */}
     </BrowserRouter>
   );

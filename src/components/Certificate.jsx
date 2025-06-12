@@ -13,8 +13,6 @@ const Certificate = ({ ImgSertif }) => {
 	const handleClose = () => {
 		setOpen(false)
 	}
-
-	console.log("ImgSertif passed to Certificate:", ImgSertif);
 	return (
 		<Box component="div" sx={{ width: "100%" }}>
 			{/* Thumbnail Container */}

@@ -1,5 +1,5 @@
-import React, { useEffect, memo, useMemo } from "react"
-import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck } from "lucide-react"
+import React, { useEffect, memo, useMemo,useState } from "react"
+import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, Eye } from "lucide-react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -112,8 +112,36 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
   </div>
 ));
 
+const CVModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[99] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+      <div className="bg-white text-black rounded-xl p-6 w-full max-w-4xl h-[90vh] relative shadow-2xl overflow-hidden">
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-3 text-2xl font-bold text-gray-500 hover:text-red-600"
+        >
+          ✕
+        </button>
+        <h2 className="text-2xl font-semibold mb-4 text-center">My Resume</h2>
+        <iframe
+          src="/Resume_X.pdf"
+          className="w-full h-full border rounded"
+          title="Resume PDF"
+        ></iframe>
+      </div>
+    </div>
+  );
+};
+
+
 const AboutPage = () => {
   // Memoized calculations
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   const { totalProjects, totalCertificates, YearExperience } = useMemo(() => {
     const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
     const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
@@ -229,6 +257,18 @@ const AboutPage = () => {
                 <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
               </button>
               </a>
+
+              <a className="w-full lg:w-auto">
+              <button
+                onClick={openModal}
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 animate-bounce-slow delay-200"
+              >
+                <Eye className="w-4 h-4 sm:w-5 sm:h-5" /> View CV
+              </button>
+              </a>
+
               <a href="#Portofolio" className="w-full lg:w-auto">
               <button 
                 data-aos="fade-up"
@@ -251,6 +291,7 @@ const AboutPage = () => {
             ))}
           </div>
         </a>
+        <CVModal isOpen={isModalOpen} onClose={closeModal} />
       </div>
 
       <style jsx>{`
