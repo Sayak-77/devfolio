@@ -248,7 +248,7 @@ const AboutPage = () => {
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-              <a href="/Resume_X.pdf" download="Sayak_Chatterjee_CV.pdf" className="w-full lg:w-auto">
+              <a href="/Sayak_Chatterjee_CV.pdf" download="Sayak_Chatterjee_CV.pdf" className="w-full lg:w-auto">
               <button 
                 data-aos="fade-up"
                 data-aos-duration="800"
