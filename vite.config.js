@@ -10,7 +10,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           react: ['react', 'react-dom'],
-          firebase: ['firebase', '@supabase/supabase-js'],
           mui: ['@mui/material', '@emotion/react', '@emotion/styled'],
           utils: ['clsx', 'sweetalert2', 'framer-motion', 'aos']
         }
