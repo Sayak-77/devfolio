@@ -126,7 +126,7 @@ const CVModal = ({ isOpen, onClose }) => {
         </button>
         <h2 className="text-2xl font-semibold mb-4 text-center">My Resume</h2>
         <iframe
-          src="/Resume_X.pdf"
+          src="/Sayak_Chatterjee_CV.pdf"
           className="w-full h-full border rounded bg-[#030014]"
           title="Resume PDF"
         />
