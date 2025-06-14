@@ -15,7 +15,7 @@ dist/
 *.dist
 
 # Local environment variables
-.env*
+.env
 *.local
 
 # Vercel config (optional if not using secrets in the file)
