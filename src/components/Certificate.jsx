@@ -42,7 +42,12 @@ const Certificate = ({ ImgSertif }) => {
 				{/* Certificate Image with Initial Filter */}
 				<Box
 					sx={{
+						width: "600px",       // Set fixed width
+						height: "400px",      // Set fixed height
 						position: "relative",
+						overflow: "hidden",   // Ensures cropped images don't overflow
+						borderRadius: "8px",  // Optional: rounded corners
+						boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)", // Optional shadow
 						"&::before": {
 							content: '""',
 							position: "absolute",
@@ -59,21 +64,14 @@ const Certificate = ({ ImgSertif }) => {
 						src={ImgSertif}
 						alt="Certificate"
 						style={{
-							width: "100%",
-							height: "auto",
+							width: "100%",        // Fill the Box width
+							height: "100%",       // Fill the Box height
+							objectFit: "cover",   // Scale and crop to fill
 							display: "block",
-							objectFit: "cover",
 							filter: "contrast(1.10) brightness(0.9) saturate(1.1)",
 							transition: "filter 0.3s ease",
 						}}
 						onClick={handleOpen}
-						onError={(e) => {
-							console.error("❌ Failed to load image:", ImgSertif);
-							e.target.src = "/fallback.png"; // Optional fallback image
-						}}
-						onLoad={() => {
-							console.log("✅ Rendering certificate image:", ImgSertif);
-						}}
 					/>
 				</Box>
 
