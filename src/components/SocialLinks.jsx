@@ -4,7 +4,8 @@ import {
   Github,
   Instagram,
   Facebook,
-  ExternalLink
+  ExternalLink,
+  Paperclip
 } from "lucide-react";
 
 const socialLinks = [
@@ -39,18 +40,27 @@ const socialLinks = [
   {
     name: "GitHub",
     displayName: "Github",
-    subText: "@sayak",
+    subText: "@Sayak-77",
     icon: Github,
     url: "https://github.com/Sayak-77",
     color: "#ffffff",
     gradient: "from-[#333] to-[#24292e]"
+  },
+  {
+    name: "Email",
+    displayName: "Email",
+    subText: "sayakascent@gmail.com",
+    icon: Paperclip,
+    url: "mailto:sayakascent@gmail.com",
+    color: "#EA4335", // Google's Gmail red color
+    gradient: "from-[#EA4335] to-[#DB4437]" // Gradient for styling
   }
 ];
 
 const SocialLinks = () => {
   const linkedIn = socialLinks.find(link => link.isPrimary);
   const otherLinks = socialLinks.filter(link => !link.isPrimary);
-  const [instagram, facebook, github] = otherLinks;
+  const [instagram, facebook, github, emailLink] = otherLinks;
 
   return (
     <div className="w-full bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 py-8 backdrop-blur-xl">
@@ -156,7 +166,7 @@ const SocialLinks = () => {
                 </span>
               </div>
               
-              <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-white ml-auto
+              <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-white ml-auto flex-shrink-0
                                      opacity-0 group-hover:opacity-100 transition-all duration-300
                                      transform group-hover:translate-x-0 -translate-x-2" />
 
@@ -168,9 +178,9 @@ const SocialLinks = () => {
           ))}
         </div>
 
-        {/* Third Row - GitHub */}
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-          {[github].map((link) => (
+        {/* Third Row - GitHub & Email */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[github, emailLink].map((link) => (
             <a
               key={link.name}
               href={link.url}
@@ -204,8 +214,7 @@ const SocialLinks = () => {
                   {link.subText}
                 </span>
               </div>
-              
-              <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-white ml-auto
+              <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-white ml-auto flex-shrink-0
                                      opacity-0 group-hover:opacity-100 transition-all duration-300
                                      transform group-hover:translate-x-0 -translate-x-2" />
 
