@@ -62,7 +62,7 @@ const ToggleButton = ({ onClick, isShowingMore }) => (
           ${isShowingMore ? "group-hover:-translate-y-0.5" : "group-hover:translate-y-0.5"}
         `}
       >
-        <polyline points={isShowingMore ? "18 15 12 9 6 15" : "6 9 12 15 18 9"}></polyline>
+        <polyline points={isShowingMore ? "   " : "6 9 12 15 18 9"}></polyline>
       </svg>
     </span>
     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500/50 transition-all duration-300 group-hover:w-full"></span>
